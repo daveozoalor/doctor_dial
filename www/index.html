@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <!-- Color theme for statusbar -->
-    <meta name="theme-color" content="#2196f3">
+    <meta name="theme-color" content="#0a60a7">
     <!-- Your app title -->
     <title>My App</title>
     <!-- Path to Framework7 Library CSS, Material Theme -->
@@ -67,21 +67,23 @@
           
             <div data-page="index" class="page">
 			     <div class="navbar">
-              <div class="navbar-inner">
-                <div class="center">Doctor Dial</div>
-                
-              </div>
+	              <div class="navbar-inner">
+	                <div class="center"><i class="glyphicon glyphicon-earphone"></i> Doctor Dial</div>
+	                
+	              </div>
                <!-- Sub navbar -->
-    <div class="subnavbar">
-        <!-- Sub navbar content, for example tabs buttons -->
-        <div class="buttons-row">
-            <a href="#tab1" class="button open-panel">Patients</a>
-            <a href="#tab3" data-panel="right" class="button open-panel">Doctors</a>
-        </div>
-    </div>
-            </div>	 
+			    <div class="subnavbar">
+			        <!-- Sub navbar content, for example tabs buttons -->
+			        <div class="buttons-row">
+			            <a href="#tab1" class="button open-panel"><i class="glyphicon glyphicon-user"></i>  Patients</a>
+			            <a href="#tab3" data-panel="right" class="button open-panel"><i class="glyphicon glyphicon-heart"></i> Doctors</a>
+			        </div>
+			    </div>
+              </div>	 
     
     
+            
+         
     <style>
   .facebook-card .card-header {
     display: block;
@@ -116,15 +118,12 @@
 </style>
                <!-- Scrollable page content -->
            <!-- Page content should have additional "pull-to-refresh-content" class -->
-  <div class="page-content pull-to-refresh-content" data-ptr-distance="55">
-    <!-- Default pull to refresh layer-->
-    <div class="pull-to-refresh-layer">
-      <div class="preloader"></div>
-      <div class="pull-to-refresh-arrow"></div>
-    </div>
-
+  <div class="page-content toolbar-fixed navbar-fixed">
+  
             <!-- -->
-            <div class="content-block-title">     <span class="icon icon-person"></span> Personal Doctor</div>
+            <div class="content-block-title">  
+            <br/>  
+             <span class="glyphicon glyphicon-user"></span> My Personal Doctor</div>
             <div class="card facebook-card">
 			  <a href="doctor_view.html"><div class="card-header no-border" style="margin-bottom: 5px;">
 			    <div class="facebook-avatar" style="padding-right: 5px;"><img src="img/doc.jpg" width="50" height="50"></div>
@@ -132,8 +131,8 @@
 			    <div class="facebook-date">Monday at 3:47 PM</div>
 			  </div> </a>
 			  <div class="card-footer no-border">
-			    <a href="messages_view.html" class="link"><i class="glyphicon glyphicon-envelope"></i> Chat</a>
-			    <a href="#" class="link "><i class="glyphicon glyphicon-earphone"></i> Call</a>
+			    <a href="messages_view.html" class="link"><i class="glyphicon glyphicon-comment"></i> Chat</a>
+			    <a href="payment.html" class="link "><i class="glyphicon glyphicon-earphone"></i> Call</a>
 			    <a href="appointments_schedule.html"class="link" ><i class="glyphicon glyphicon-time"></i> Schedule</a>
 			   
 			  </div>
@@ -205,48 +204,49 @@
             
             
     
-             <div class="toolbar toolbar-bottom">
-			    <div class="toolbar-inner">
-			        <a href="#" class="link">Home</a>
-			        <a href="#" class="link">Account</a>
-			        <a href="#" class="link">Settings</a>
-			    </div>
-			</div>
-         
           
           
             </div>
-            
-            
-            
-            
-            
+             <div class="toolbar toolbar-bottom">
+			    <div class="toolbar-inner">
+			        <a href="accounts_view.html" class="link">₦ Account</a>
+			        <a href="#" class="link"><i class="glyphicon glyphicon-cog"></i>&nbsp;Settings</a>
+			    </div>
+			</div>
+      </div>
+  
+    </div>
+    
+     </div>
+     </div>
             <!-- login screen -->
             <div class="login-screen modal-in">
             
             
     <div class="view">
-    <div class="navbar">
+    <div class="pages navbar-fixed toolbar-fixed">
+    
+   
+        <div class="page" data-page="login">
+          
+      	
+      <div class="page-content login-screen-content">
+        
+         <div class="navbar" >
 	              <div class="navbar-inner">
 	                <div class="center"><i class="glyphicon glyphicon-earphone"></i> Doctor Dial</div>
 	              </div> 
 	              <div class="subnavbar">
 			        <!-- Sub navbar content, for example tabs buttons -->
 			      <div class="buttons-row">
-		            <a href="#tab1" class="button close-login-screen">Create Account</a>
-		            <a href="#tab3" data-panel="right" class="button close-login-screen">Forgot Password</a>
+		            <a href="#tab1" class="button close-login-screen"><i class="glyphicon glyphicon-user"></i>&nbsp;Signup</a>
+		            <a href="#tab3" data-panel="right" class="button close-login-screen"><i class="glyphicon glyphicon-random"></i>&nbsp;&nbsp;Forgot</a>
 			      </div>
 			    </div>
-            </div>	
-            
-      <div class="page">
-      
-          
-      
-        <div class="page-content login-screen-content">
+            </div>
         
         
-            
+           <div class="text-center"><img src="img/logo.png"/></div>
           <div class="login-screen-title">Login</div>
           <form>
             <div class="list-block">
@@ -271,7 +271,9 @@
             </div>
             <div class="list-block">
               <ul>
-                <li><p><a href="#" class="button button-big button-round button-fill color-blue close-login-screen">Sign In</a></p>
+                <li><p><a href="#" class="button button-big button-round button-fill color-blue close-login-screen"><i class="glyphicon glyphicon-ok"></i> &nbsp; Sign In</a></p>
+                </li>
+                <li><p><a href="#" class="button button-big button-round button-fill color-green close-login-screen"><i class="glyphicon glyphicon-ok"></i> &nbsp; Create New Account</a></p>
                 </li>
               </ul>
               <div class="list-block-label">
@@ -280,14 +282,12 @@
           </form>
         </div>
       </div>
+      </div>
     </div>
   </div>
             <!-- login screen end-->
             
         
-        
-      </div>
-    </div>
     <!-- Path to Framework7 Library JS-->
     <script type="text/javascript" src="js/framework7.min.js"></script>
     <!-- Path to your app js-->

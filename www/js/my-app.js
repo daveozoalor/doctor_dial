@@ -22,10 +22,20 @@ var mainView = myApp.addView('.view-main',{
 	//dynamicNavbar: true	
 });
 
+//calendar
+var calendarDefault = myApp.calendar({
+    input: '#calendar-default',
+});  
+
 myApp.onPageInit('about', function(e){
 	//Do something for page
 	
-})
+});
+
+$$('.form-to-json').on('click', function(){
+  var formData = myApp.formToJSON('#my-form');
+  alert(JSON.stringify(formData));
+}); 
 
 
 myApp.onPageInit('message_view', function(e){
@@ -33,7 +43,7 @@ myApp.onPageInit('message_view', function(e){
 		var myMessagebar = app.messagebar('.messagebar', {
    			 maxHeight: 300
 		});  
-})
+});
 
 
 
