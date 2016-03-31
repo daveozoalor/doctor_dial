@@ -20,6 +20,8 @@
     <!-- Latest compiled and minified CSS -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 
+   
+     <script src='https://cdn.firebase.com/js/client/2.2.1/firebase.js'></script>
   </head>
   <body>
     <!-- Views -->
@@ -63,6 +65,24 @@
           <!-- Page, "data-page" contains page name -->
          <!-- Top Navbar. In Material theme it should be inside of the page-->
        
+              
+            
+    <div class="navbar cached" data-page="messages_view">
+              <div class="navbar-inner">
+                <div class="center navbar-title" style="color: white;">Dr. John Doe</div>
+                
+              </div>
+               <!-- Sub navbar -->
+    <div class="subnavbar">
+        <!-- Sub navbar content, for example tabs buttons -->
+        <div class="buttons-row">
+            <a href="#tab1" class="button active">Messages</a>
+            <a href="#tab3" data-panel="right" class="button">Call</a>
+            <a href="#tab3" data-panel="right" class="button">Schedule</a>
+        </div>
+    </div>
+            </div>	
+
  
           
             <div data-page="index" class="page">
@@ -119,7 +139,9 @@
                <!-- Scrollable page content -->
            <!-- Page content should have additional "pull-to-refresh-content" class -->
   <div class="page-content toolbar-fixed navbar-fixed">
-  
+    
+    
+   
             <!-- -->
             <div class="content-block-title">  
             <br/>  
@@ -131,7 +153,7 @@
 			    <div class="facebook-date">Monday at 3:47 PM</div>
 			  </div> </a>
 			  <div class="card-footer no-border">
-			    <a href="messages_view.html" class="link"><i class="glyphicon glyphicon-comment"></i> Chat</a>
+			    <a href="#messages_view" class="link"><i class="glyphicon glyphicon-comment"></i> Chat</a>
 			    <a href="payment.html" class="link "><i class="glyphicon glyphicon-earphone"></i> Call</a>
 			    <a href="appointments_schedule.html"class="link" ><i class="glyphicon glyphicon-time"></i> Schedule</a>
 			   
@@ -215,6 +237,72 @@
 			</div>
       </div>
   
+  
+  
+            <div class="page toolbar-fixed navbar-fixed cached" data-page="messages_view">
+     
+<div class="page-content messages-content">    
+
+          <div class="messages">
+      <!-- Date stamp -->
+      <div class="messages-date">Sunday, Feb 9 <span>12:58</span></div>
+ 
+      <!-- Sent message (by default - green and on right side) -->
+      <div class="message message-sent">
+        <!-- Bubble with text -->
+        <div id='messagesDiv' class="message-text"></div>
+      </div>
+ 
+      <!-- Another sent message -->
+      <div class="message message-sent">
+        <!-- Bubble with text -->
+        <div class="message-text">How are you?</div>
+      </div>
+       
+       <!-- Firebase -->
+    <input type='text' id='nameInput' placeholder='Name'>
+    <input type='text' id='messageInput' placeholder='Message'>
+    <button id="submit">Submit</button>
+    
+    
+    
+      <!-- Received message (by default - grey on left side) -->
+      <div class="message message-with-avatar message-received">
+        <!-- Sender name -->
+        <div class="message-name">Kate</div>
+ 
+        <!-- Bubble with text -->
+        <div class="message-text">I am fine, thanks</div>
+ 
+        <!-- Sender avatar -->
+        <div style="background-image:url(http://lorempixel.com/output/people-q-c-100-100-9.jpg)" class="message-avatar"></div>
+      </div>
+ 
+      <!-- Another date stamp -->
+      <div class="messages-date">Sunday, Feb 3 <span>11:58</span></div>
+ 
+      <!-- Sent message with image -->
+      <div class="message message-pic message-sent">
+        <!-- Bubble with image -->
+        <div class="message-text"><img src="http://lorempixel.com/300/300/"></div>
+        <!-- Message label -->
+        <div class="message-label">Delivered 2 days ago</div>
+      </div>
+    </div>
+  
+ </div>
+	  <!-- messagebar -->
+  <div class="toolbar messagebar" >
+    <div class="toolbar-inner">
+      <textarea placeholder="Message" rows="3"></textarea>
+      <a href="#" class="link">Send</a>
+    </div>
+  </div>
+</div>
+
+  
+  
+  
     </div>
     
      </div>
@@ -232,6 +320,9 @@
       	
       <div class="page-content login-screen-content">
         
+
+
+   
          <div class="navbar" >
 	              <div class="navbar-inner">
 	                <div class="center"><i class="glyphicon glyphicon-earphone"></i> Doctor Dial</div>
@@ -246,7 +337,7 @@
             </div>
         
         
-           <div class="text-center"><img src="img/logo.png"/></div>
+          <div class="login-screen-title"><img src="img/logo.png"/></div>
           <div class="login-screen-title">Login</div>
           <form>
             <div class="list-block">
@@ -285,12 +376,18 @@
       </div>
     </div>
   </div>
-            <!-- login screen end-->
             
-        
+   
+    
+    
+
     <!-- Path to Framework7 Library JS-->
     <script type="text/javascript" src="js/framework7.min.js"></script>
-    <!-- Path to your app js-->
+    <!-- Path to your app js--> 
+
     <script type="text/javascript" src="js/my-app.js"></script>
+<!-- login screen end-->
+            
+        
   </body>
 </html> 

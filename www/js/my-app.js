@@ -10,8 +10,9 @@ var myApp = new Framework7({
         myApp.hideIndicator();
     },
     animateNavBackIcon: true
-    
 });
+
+
 
 //If we need to use custom DOM 
 var $$ = Dom7;
@@ -20,6 +21,7 @@ var $$ = Dom7;
 var mainView = myApp.addView('.view-main',{
 	//because we wat to use dynamic navbar
 	//dynamicNavbar: true	
+	domCache: true //enable inline pages
 });
 
 //calendar
@@ -60,3 +62,22 @@ var pickerDescribe = myApp.picker({
         },
     ]
 });    
+
+  var myDataRef = new Firebase('https://distdial.firebaseio.com/');
+      $$('#submit').click(function () {
+       
+          var name = $$('#nameInput').val();
+          var text = $$('#messageInput').val();
+          myDataRef.push({name: name, text: text});
+          $$('#messageInput').val('');
+        
+      });
+      myDataRef.on('child_added', function(snapshot) {
+        var message = snapshot.val();
+        displayChatMessage(message.name, message.text);
+      });
+      function displayChatMessage(name, text) {
+        $$('<div/>').text(text).prepend($$('<em/>').text(name+': ')).appendTo($$('#messagesDiv'));
+        $$('#messagesDiv')[0].scrollTop = $$('#messagesDiv')[0].scrollHeight;
+       // alert("ello!");
+      };
