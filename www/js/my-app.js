@@ -9,7 +9,8 @@ var myApp = new Framework7({
     onAjaxComplete: function (xhr) {
         myApp.hideIndicator();
     },
-    animateNavBackIcon: true
+    animateNavBackIcon: true,
+    smartSelectSearchbar:true
 });
 
 
@@ -62,22 +63,47 @@ var pickerDescribe = myApp.picker({
         },
     ]
 });    
-
+        //add time
+        
   var myDataRef = new Firebase('https://distdial.firebaseio.com/');
       $$('#submit').click(function () {
        
+          var senderPhone = localStorage.getItem("userphone")
+          var receiverPhone = $$('#receiverPhoneInput').val();
           var name = $$('#nameInput').val();
           var text = $$('#messageInput').val();
-          myDataRef.push({name: name, text: text});
+          //time
+            var today = new Date();
+          var time = today.toDateString()+' '+today.getHours() + ':' + today.getMinutes();
+       
+          myDataRef.push({senderPhone: senderPhone,receiverPhone: receiverPhone, text: text});
           $$('#messageInput').val('');
         
       });
       myDataRef.on('child_added', function(snapshot) {
         var message = snapshot.val();
-        displayChatMessage(message.name, message.text);
+        displayChatMessage(message.receiverPhone,message.senderPhone,message.text);
       });
-      function displayChatMessage(name, text) {
-        $$('<div/>').text(text).prepend($$('<em/>').text(name+': ')).appendTo($$('#messagesDiv'));
+      function displayChatMessage(receiverPhone,senderPhone, text) {
+      	//print in the text area
+        $$('<div/>').text(text).appendTo($$('#messagesDiv'));
         $$('#messagesDiv')[0].scrollTop = $$('#messagesDiv')[0].scrollHeight;
        // alert("ello!");
       };
+      
+      function saveUserData(){
+	  	var usernameInput = $$('#usernameInput').val();
+	  	var userphoneInput = $$('#userphoneInput').val();
+	  	var userEmailInput = $$('#userEmailInput').val();
+	  	
+	  	//save to local database
+	  	localStorage.setItem("username", usernameInput);
+	  	localStorage.setItem("userphone", userphoneInput);
+	  	localStorage.setItem("userphone", userEmailInput);
+	  	
+	  	//how to retrieve item
+	  	//localStorage.getItem("Name")
+	  	//console.log(localStorage.length); //check for database lenhth
+	  	//how to clear local storage
+	  	//localStorage.clear();
+	  }

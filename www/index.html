@@ -45,9 +45,14 @@
 				  <!-- Right Panel with Cover effect -->
 				  <div class="panel panel-left panel-cover">
 				    <div class="content-block">
-				      <p>Doctor's Settings Page</p>
+				      <p>Users</p>
 				      <!-- Click on link with "close-panel" class will close panel -->
-				      <p><a href="#" class="close-panel">Close me</a></p>
+				      
+				      <input id="usernameInput" value=""  type="text"/>
+				      <input id="userphoneInput" value="" type="text" />
+				      <input id="userEmailInput" value=""  type="text" />
+				      <p><a href="#" class="close-panel button button-blue" onClick="saveUserData()" >Save</a></p>
+				      <p><a href="#" class="close-panel button button-blue">Close</a></p>
 				      <!-- Click on link with "open-panel" and data-panel="left" attribute will open Left panel -->
 				      <p><a href="#" data-panel="left" class="open-panel">Open Left Panel</a></p>
 				    </div>
@@ -66,44 +71,15 @@
          <!-- Top Navbar. In Material theme it should be inside of the page-->
        
               
-            
-    <div class="navbar cached" data-page="messages_view">
-              <div class="navbar-inner">
-                <div class="center navbar-title" style="color: white;">Dr. John Doe</div>
-                
-              </div>
-               <!-- Sub navbar -->
-    <div class="subnavbar">
-        <!-- Sub navbar content, for example tabs buttons -->
-        <div class="buttons-row">
-            <a href="#tab1" class="button active">Messages</a>
-            <a href="#tab3" data-panel="right" class="button">Call</a>
-            <a href="#tab3" data-panel="right" class="button">Schedule</a>
-        </div>
-    </div>
-            </div>	
-
- 
+             
           
-            <div data-page="index" class="page">
-			     <div class="navbar">
-	              <div class="navbar-inner">
-	                <div class="center"><i class="glyphicon glyphicon-earphone"></i> Doctor Dial</div>
-	                
-	              </div>
-               <!-- Sub navbar -->
-			    <div class="subnavbar">
-			        <!-- Sub navbar content, for example tabs buttons -->
-			        <div class="buttons-row">
-			            <a href="#tab1" class="button open-panel"><i class="glyphicon glyphicon-user"></i>  Patients</a>
-			            <a href="#tab3" data-panel="right" class="button open-panel"><i class="glyphicon glyphicon-heart"></i> Doctors</a>
-			        </div>
-			    </div>
-              </div>	 
-    
-    
-            
-         
+
+       
+  
+
+          
+<div data-page="index" class="page">
+		
     <style>
   .facebook-card .card-header {
     display: block;
@@ -137,14 +113,33 @@
   }  
 </style>
                <!-- Scrollable page content -->
-           <!-- Page content should have additional "pull-to-refresh-content" class -->
+           <!-- Page content should have additional "pull-to-refresh-content" class -->	    	
+         <div class="navbar" data-page="index">
+	              <div class="navbar-inner">
+	                <div class="center"><i class="glyphicon glyphicon-earphone"></i> Doctor Dial</div>
+	                
+	              </div>
+               <!-- Sub navbar -->
+			    <div class="subnavbar">
+			        <!-- Sub navbar content, for example tabs buttons -->
+			    <div class="buttons-row">
+			       <a href="messages_index.html" class="button">
+			       		<i class="glyphicon glyphicon-envelope"></i> Messages
+			       	</a>
+			       <a href="#tab1" class="button open-panel">
+			       	<i class="glyphicon glyphicon-user"></i> Patients</a>
+			       	
+			       <a href="#tab3" data-panel="right" class="button open-panel">
+			       <i class="glyphicon glyphicon-heart"></i> Doctors</a>
+			        </div>
+			    </div>
+              </div>
+    
   <div class="page-content toolbar-fixed navbar-fixed">
-    
-    
+      		
    
             <!-- -->
             <div class="content-block-title">  
-            <br/>  
              <span class="glyphicon glyphicon-user"></span> My Personal Doctor</div>
             <div class="card facebook-card">
 			  <a href="doctor_view.html"><div class="card-header no-border" style="margin-bottom: 5px;">
@@ -221,12 +216,6 @@
       </ul>
     </div>
 			
-			
-		           
-            
-            
-    
-          
           
             </div>
              <div class="toolbar toolbar-bottom">
@@ -239,32 +228,35 @@
   
   
   
-            <div class="page toolbar-fixed navbar-fixed cached" data-page="messages_view">
-     
-<div class="page-content messages-content">    
-
-          <div class="messages">
+     <div class="page toolbar-fixed navbar-fixed cached" data-page="messages_view">
+     <div class="navbar" data-page="messages_view">
+              <div class="navbar-inner">
+                <div class="center navbar-title" style="color: white;">Dr. John Doe</div>
+              </div>
+               <!-- Sub navbar -->
+    <div class="subnavbar">
+        <!-- Sub navbar content, for example tabs buttons -->
+        <div class="buttons-row">
+            <a href="messages_index.html" class="button active">Messages</a>
+            <a href="payments.html" data-panel="right" class="button">Call</a>
+            <a href="#tab3" data-panel="right" class="button">Schedule</a>
+        </div>
+    </div>
+            </div>
+		<div class="page-content messages-content">    
+                         
+      <div class="messages">
       <!-- Date stamp -->
       <div class="messages-date">Sunday, Feb 9 <span>12:58</span></div>
  
-      <!-- Sent message (by default - green and on right side) -->
-      <div class="message message-sent">
-        <!-- Bubble with text -->
-        <div id='messagesDiv' class="message-text"></div>
-      </div>
+   
  
       <!-- Another sent message -->
       <div class="message message-sent">
         <!-- Bubble with text -->
         <div class="message-text">How are you?</div>
       </div>
-       
-       <!-- Firebase -->
-    <input type='text' id='nameInput' placeholder='Name'>
-    <input type='text' id='messageInput' placeholder='Message'>
-    <button id="submit">Submit</button>
-    
-    
+   
     
       <!-- Received message (by default - grey on left side) -->
       <div class="message message-with-avatar message-received">
@@ -278,9 +270,14 @@
         <div style="background-image:url(http://lorempixel.com/output/people-q-c-100-100-9.jpg)" class="message-avatar"></div>
       </div>
  
+     
+    <!-- Sent message (by default - green and on right side) -->
+      <div class="message message-sent">
+        <!-- Bubble with text -->
+        <div id='messagesDiv' class="message-text"></div>
+      </div> 
       <!-- Another date stamp -->
       <div class="messages-date">Sunday, Feb 3 <span>11:58</span></div>
- 
       <!-- Sent message with image -->
       <div class="message message-pic message-sent">
         <!-- Bubble with image -->
@@ -294,8 +291,11 @@
 	  <!-- messagebar -->
   <div class="toolbar messagebar" >
     <div class="toolbar-inner">
-      <textarea placeholder="Message" rows="3"></textarea>
-      <a href="#" class="link">Send</a>
+       <!-- Firebase -->
+    <input type="hidden" id='senderPhoneInput' value='userPhone()'>
+    <input type="hidden" id='receiverPhoneInput' value='receiverPhone()'>
+    <textarea id='messageInput' placeholder="Message" rows="3"></textarea>
+    <a href="#" class="link" id="submit">Send</a>
     </div>
   </div>
 </div>
